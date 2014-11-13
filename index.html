@@ -67,9 +67,20 @@
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     id: 'kaysabelle.k7cl84io'
-}).addTo(map3);
-var geojsonLayer = new L.GeoJSON.AJAX("cellsites.geojson");       
-geojsonLayer.addTo(map3);
+  }).addTo(map3);
+
+  var cellSites = new L.geoJson();
+  cellSites.addTo(map);
+  
+  $.ajax({
+  dataType: "json",
+  url: "cellsites.geojson",
+  success: function(data) {
+      $(data.features).each(function(key, data) {
+          cellSites.addData(data);
+      });
+  }
+  }).error(function() {});
 </script>
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>

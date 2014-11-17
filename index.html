@@ -70,12 +70,13 @@
   L.geoJson(cell_sites).addTo(map3);
 </script>
 
+<p>This is a test of a conditional img src based on a Google Form. If the result is "Yes" below, the image should be a cat with a crown. If the result is "No" below, the image should be a cat </p>
 <h3>RESULT BELOW</h3>
 <div id="curAns">not shown for some reason</div>
+<img id="toChange" src="http://i2.pinger.pl/pgr398/047e3008001208e35006793d/pusheen21.png"/>
 
 <script type="text/javascript">
   window.onload = function() { init() };
-
   var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/10CAwVA-uIWAJbxhvLWT0l13kB37GD2y0wIuocSn1uOw/pubhtml';
 
   function init() {
@@ -86,7 +87,12 @@
 
   function showInfo(data) {
     document.getElementById("curAns").innerHTML = data[0].level;
-    console.log(data);
+    if (data[0].level == "yes") {
+       document.getElementById("toChange").src = "http://i2.pinger.pl/pgr398/047e3008001208e35006793d/pusheen21.png";
+    }
+    else {
+       document.getElementById("toChange").src = "https://pbs.twimg.com/profile_images/453756455057780736/tpO5K7FM.png";
+    }
   }
 </script>
 

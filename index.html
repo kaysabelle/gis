@@ -21,22 +21,6 @@
   <body>
     <div class="wrapper">
       <header>
-        <script type="text/javascript">
-          window.onload = function() { init() };
-
-  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/10CAwVA-uIWAJbxhvLWT0l13kB37GD2y0wIuocSn1uOw/pubhtml?gid=0&single=true';
-
-  function init() {
-    Tabletop.init( { key: public_spreadsheet_url,
-                     callback: showInfo,
-                     simpleSheet: true } )
-  }
-
-  function showInfo(data, tabletop) {
-    alert("Successfully processed!")
-    console.log(data);
-  }
-        </script>
       
       
         <h1>Geographic Information Systems</h1>
@@ -89,15 +73,21 @@
 <h3>RESULT BELOW</h3>
 <div id="curAns">not shown for some reason</div>
 
-<script>
-    $.ajax("https://docs.google.com/spreadsheet/pub?key=16faZ3JFYdDrzf31effJwnjsxVLHCMR3tFX3MZUM6cDs&single=true&gid=1498398679&&range=a1/export?format=csv").done(function(result){
-        document.getElementById("curAns").innerHTML = "DONE";
-    });
-    /*$.ajax("https://docs.google.com/spreadsheets/d/16faZ3JFYdDrzf31effJwnjsxVLHCMR3tFX3MZUM6cDs/pubhtml?gid=1498398679&single=true&gid=0&range=a1/export?format=csv").done(
-      function(result){
-                document.getElementById("curAns").innerHTML = result;
-            });*/
-  
+<script type="text/javascript">
+  window.onload = function() { init() };
+
+  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/10CAwVA-uIWAJbxhvLWT0l13kB37GD2y0wIuocSn1uOw/pubhtml';
+
+  function init() {
+    Tabletop.init( { key: public_spreadsheet_url,
+                     callback: showInfo,
+                     simpleSheet: true } )
+  }
+
+  function showInfo(data) {
+    document.getElementById("data").innerHTML = JSON.stringify(data);
+        console.log(data);
+  }
 </script>
 
 <!--

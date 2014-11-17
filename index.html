@@ -11,6 +11,7 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="https://raw.githubusercontent.com/calvinmetcalf/leaflet-ajax/master/dist/leaflet.ajax.min.js"></script>
     <script src="cellsites.geojson" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"> 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -64,7 +65,15 @@
   }).addTo(map3);
 
   L.geoJson(cell_sites).addTo(map3);
+  
+  
+  
+  $.ajax("https://docs.google.com/spreadsheets/d/16faZ3JFYdDrzf31effJwnjsxVLHCMR3tFX3MZUM6cDs/pubhtml?gid=1498398679&single=true&gid=0&range=b5&output=csv").done(function(result){
+                alert(result);
+            });
 </script>
+
+
 
 <!--
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>

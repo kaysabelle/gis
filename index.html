@@ -71,7 +71,7 @@
 <div id="curAns">not shown for some reason</div>
 
 <script>
-    $.ajax("https://docs.google.com/spreadsheet/pub?key=16faZ3JFYdDrzf31effJwnjsxVLHCMR3tFX3MZUM6cDs&single=true&gid=1498398679&&range=a1&output=csv").done(function(result){
+    $.ajax("https://docs.google.com/spreadsheet/pub?key=16faZ3JFYdDrzf31effJwnjsxVLHCMR3tFX3MZUM6cDs&single=true&gid=1498398679&&range=a1/export?format=csv").done(function(result){
         document.getElementById("curAns").innerHTML = "DONE";
     });
     /*$.ajax("https://docs.google.com/spreadsheets/d/16faZ3JFYdDrzf31effJwnjsxVLHCMR3tFX3MZUM6cDs/pubhtml?gid=1498398679&single=true&gid=0&range=a1/export?format=csv").done(

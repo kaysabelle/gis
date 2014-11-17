@@ -85,7 +85,8 @@
   }
 
   function showInfo(data) {
-    document.getElementById("curAns").innerHTML = JSON.stringify(data);
+    var ans = JSON.parse(data);
+    document.getElementById("curAns").innerHTML = ans.level;
         console.log(data);
   }
 </script>

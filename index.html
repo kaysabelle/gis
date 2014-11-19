@@ -87,7 +87,7 @@
 
   var map4 = L.map('map4').addLayer(tiles);
   
-  var markers = L.MarkerClusterGroup();
+  var markers = L.markerClusterGroup();
   
   var sites = L.geoJson(cell_sites, {
     onEachFeature: function (feature, layer) {

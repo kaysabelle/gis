@@ -89,16 +89,14 @@
   
   var markers = L.markerClusterGroup();
   
-  var geoJsonLayer = L.geoJson(cell_sites, {
+  var sites = L.geoJson(cell_sites, {
     onEachFeature: function (feature, layer) {
       layer.bindPopup(feature.properties.MAP_NO);
     }
   });
-  
-  markers.addLayer(geoJsonLayer);
-
-  map4.addLayer(markers);
-  map4.fitBounds(markers.getBounds());
+  markers.addLayer(sites); // add to cluster group
+  map4.addLayer(markers);  // add to map
+  map4.fitBounds(markers.getBounds());  // set view on cluster extend
 </script>
 
 <p>This is a test of a conditional img src based on a Google Form. If the result is "Yes" below, the image should be a cat with a crown. If the result is "No" below, the image should be a cat with a top hat.</p>

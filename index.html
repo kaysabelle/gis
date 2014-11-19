@@ -91,13 +91,12 @@
   
   var geoJsonLayer = L.geoJson(cell_sites, {
     onEachFeature: function (feature, layer) {
-      layer.bindPopup(feature.properties.address);
+      layer.bindPopup(feature.properties.MAP_NO);
     }
   });
   
   markers.addLayer(geoJsonLayer);
-  map4.addLayer(geoJsonLayer);
-  
+
   map4.addLayer(markers);
   map4.fitBounds(markers.getBounds());
 </script>

@@ -96,7 +96,7 @@
           for (var index = 0; index < cell_sites.features.length; index++) {
              var curTower = cell_sites.features[index];
              var title = curTower.properties.PROJECT_NA;
-             console.log(title);
+             console.log("Now logging... " + title);
              var marker = L.marker(L.latLng(curTower.properties.LATITUDE, curTower.properties.LONGITUDE), { title: title });
              marker.bindPopup(title);
              markers.addLayer(marker);

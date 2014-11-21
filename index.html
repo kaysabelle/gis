@@ -102,16 +102,7 @@
           }
 
           map4.addLayer(markers);
-
-          /*
-          var sites = L.geoJson(cell_sites, {
-            onEachFeature: function (feature, layer) {
-              layer.bindPopup(feature.properties.MAP_NO);
-            }
-          });
-          markers.addLayer(sites); // add to cluster group
-          map4.addLayer(markers);  // add to map
-          map4.fitBounds(markers.getBounds());  // set view on cluster extend */
+          map4.fitBounds(markers.getBounds());
         </script>
 
         <p>This is a test of a conditional img src based on a Google Form. <br />

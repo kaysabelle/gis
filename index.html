@@ -90,8 +90,20 @@
 
           var map4 = L.map('map4', { zoom: 13, layers: [tiles]});
           
-          var markers = L.markerClusterGroup();
+          var markers = new L.markerClusterGroup();
+          //var cs = cell_sites;
+
           
+
+
+
+
+
+
+
+
+
+
           for (var index = 0; index < cell_sites.length; index++) {
              var curTower = cell_sites[index];
              var title = curTower.properties.PROJECT_NA;

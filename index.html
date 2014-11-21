@@ -86,12 +86,11 @@
             maxZoom: 18,
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
             id: 'kaysabelle.k7cl84io'
-          });
+          }), latlng = L.latLng(35.4120317,-120.7349932);
 
-          var map4 = L.map('map4', { zoom: 13, layers: [tiles]});
+          var map4 = L.map('map4', { center: latlng, zoom: 13, layers: [tiles]});
           
-          var markers = L.markerClusterGroup();
-          //var cs = cell_sites;
+          var markers = L.markerClusterGroup( { chunkedLoading: true });
         
           for (var index = 0; index < cell_sites.features.length; index++) {
              var curTower = cell_sites.features[index];

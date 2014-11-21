@@ -5,19 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>GIS by kaysabelle</title>
 
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <link rel="stylesheet" href="stylesheets/MarkerCluster.css" />
     <link rel="stylesheet" href="stylesheets/MarkerCluster.Default.css" />
     
+    <!-- Javascripts -->
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="https://raw.githubusercontent.com/calvinmetcalf/leaflet-ajax/master/dist/leaflet.ajax.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="javascripts/tabletop.js"></script>
     <script src="javascripts/leaflet.markercluster-src.js"></script>
-    <script src="javascripts/leaflet.markercluster.js"></script>
     
+    <!-- GeoJSON data files -->
     <script src="cellsites.geojson" type="text/javascript"></script>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -45,87 +47,103 @@
       <section>
         <h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to my first Github Page!</h3>
 
-<h3>Here's where I am right now, using Leaflet and OpenStreetMap.</h3>
+        <h3>Here's where I am right now, using Leaflet and OpenStreetMap.</h3>
 
-<div id="map"></div> <br/><br/>
-<script>
-  var map = L.map('map').setView([35.2701015,-120.6653306], 13);
-  L.tileLayer('http://{s}.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia2F5c2FiZWxsZSIsImEiOiJueGpTMXpFIn0.qr7G3C1qqlj7H6DoEJpvJA', {
-    maxZoom: 18,
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    id: 'kaysabelle.k7cl84io'
-  }).addTo(map);
-</script>
+        <div id="map"></div> <br/><br/>
+        <script>
+          var map = L.map('map').setView([35.2701015,-120.6653306], 13);
+          L.tileLayer('http://{s}.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia2F5c2FiZWxsZSIsImEiOiJueGpTMXpFIn0.qr7G3C1qqlj7H6DoEJpvJA', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            id: 'kaysabelle.k7cl84io'
+          }).addTo(map);
+        </script>
 
-<h3>Here is a map of places I've been, using Google Forms and CartoDB.</h3>
-<iframe width='100%' height='520' frameborder='0' src='http://kcruz.cartodb.com/viz/933e5312-6e7e-11e4-b9ad-0e4fddd5de28/embed_map' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
-<br />
+        <h3>Here is a map of places I've been, using Google Forms and CartoDB.</h3>
+        <iframe width='100%' height='520' frameborder='0' src='http://kcruz.cartodb.com/viz/933e5312-6e7e-11e4-b9ad-0e4fddd5de28/embed_map' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+        <br />
 
-<h3>Here is a map of the cell towers in San Luis Obispo.</h3>
+        <h3>Here is a map of the cell towers in San Luis Obispo.</h3>
 
-<div id="map3"></div> <br/><br/>
-<script>
-  var map3 = L.map('map3').setView([35.4120317,-120.7349932], 9);
-  L.tileLayer('http://{s}.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia2F5c2FiZWxsZSIsImEiOiJueGpTMXpFIn0.qr7G3C1qqlj7H6DoEJpvJA', {
-    maxZoom: 18,
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    id: 'kaysabelle.k7cl84io'
-  }).addTo(map3);
+        <div id="map3"></div> <br/><br/>
+        <script>
+          var map3 = L.map('map3').setView([35.4120317,-120.7349932], 9);
+          L.tileLayer('http://{s}.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia2F5c2FiZWxsZSIsImEiOiJueGpTMXpFIn0.qr7G3C1qqlj7H6DoEJpvJA', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            id: 'kaysabelle.k7cl84io'
+          }).addTo(map3);
 
-  L.geoJson(cell_sites).addTo(map3);
-</script>
+          L.geoJson(cell_sites).addTo(map3);
+        </script>
 
-<h3>Here is the same map but the points should be clustered.</h3>
+        <h3>Here is the same map but the points should be clustered.</h3>
 
-<div style="height:400px;" id="map4"></div> <br/><br/>
-<script>
-  var tiles = L.tileLayer('http://{s}.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia2F5c2FiZWxsZSIsImEiOiJueGpTMXpFIn0.qr7G3C1qqlj7H6DoEJpvJA', {
-    maxZoom: 18,
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    id: 'kaysabelle.k7cl84io'
-  });
+        <!-- LEAFLET MARKERCLUSTER STARTS HERE -->
+        <div style="height:400px;" id="map4"></div> <br/><br/>
+        <script>
+          var tiles = L.tileLayer('http://{s}.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia2F5c2FiZWxsZSIsImEiOiJueGpTMXpFIn0.qr7G3C1qqlj7H6DoEJpvJA', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            id: 'kaysabelle.k7cl84io'
+          });
 
-  var map4 = L.map('map4').addLayer(tiles);
-  
-  var markers = L.markerClusterGroup();
-  
-  var sites = L.geoJson(cell_sites, {
-    onEachFeature: function (feature, layer) {
-      layer.bindPopup(feature.properties.MAP_NO);
-    }
-  });
-  markers.addLayer(sites); // add to cluster group
-  map4.addLayer(markers);  // add to map
-  map4.fitBounds(markers.getBounds());  // set view on cluster extend
-</script>
+          var map4 = L.map('map4').addLayer(tiles);
+          
+          var markers = L.markerClusterGroup();
+          
+          for (var index = 0; index < cell_site.length; index++) {
+             var curTower = cell_sites[index];
+             var title = curTower.properties.PROJECT_NA;
+             var marker = L.marker(L.latLng(curTower.properties.LATITUDE, curTower.properties.LONGITUDE), { title: title });
+             marker.bindPopup(title);
+             markers.addLayer(marker);
+          }
 
-<p>This is a test of a conditional img src based on a Google Form. If the result is "Yes" below, the image should be a cat with a crown. If the result is "No" below, the image should be a cat with a top hat.</p>
-<p>The form can be found here: <a href="https://docs.google.com/forms/d/1YMtlaqdXn9fjQIZtoeJQw9QIaecZRmSkrWkuDx6EVHo/viewform">Do you like cats with crowns?</a></p>
+          map4.addLayer(markers);
 
-<h3>RESULT BELOW</h3>
-<div id="curAns">not shown for some reason</div>
-<img id="toChange" src="http://i2.pinger.pl/pgr398/047e3008001208e35006793d/pusheen21.png"/>
+          /*
+          var sites = L.geoJson(cell_sites, {
+            onEachFeature: function (feature, layer) {
+              layer.bindPopup(feature.properties.MAP_NO);
+            }
+          });
+          markers.addLayer(sites); // add to cluster group
+          map4.addLayer(markers);  // add to map
+          map4.fitBounds(markers.getBounds());  // set view on cluster extend */
+        </script>
 
-<script type="text/javascript">
-  window.onload = function() { init() };
-  var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/16faZ3JFYdDrzf31effJwnjsxVLHCMR3tFX3MZUM6cDs/pubhtml';
+        <p>This is a test of a conditional img src based on a Google Form. <br />
+          If the result is "Yes" below, the image should be a cat with a crown. <br /> 
+          If the result is "No" below, the image should be a cat with a top hat.</p>
+        <p>The form can be found here: 
+          <a href="https://docs.google.com/forms/d/1YMtlaqdXn9fjQIZtoeJQw9QIaecZRmSkrWkuDx6EVHo/viewform">Do you like cats with crowns?</a>
+        </p>
 
-  function init() {
-    Tabletop.init( { key: public_spreadsheet_url,
-                     callback: showInfo,
-                     simpleSheet: true } )
-  }
+        <h3>RESULT BELOW</h3>
+        <div id="curAns">not shown for some reason</div>
+        <img id="toChange" src="http://i2.pinger.pl/pgr398/047e3008001208e35006793d/pusheen21.png"/>
 
-  function showInfo(data) {
-    document.getElementById("curAns").innerHTML = data[0].level;
-    if (data[0].level == "Yes") {
-       document.getElementById("toChange").src = "http://i2.pinger.pl/pgr398/047e3008001208e35006793d/pusheen21.png";
-    }
-    else {
-       document.getElementById("toChange").src = "https://pbs.twimg.com/profile_images/453756455057780736/tpO5K7FM.png";
-    }
-  }
-</script>
+        <script type="text/javascript">
+          window.onload = function() { init() };
+          var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/16faZ3JFYdDrzf31effJwnjsxVLHCMR3tFX3MZUM6cDs/pubhtml';
+
+          function init() {
+            Tabletop.init( { key: public_spreadsheet_url,
+                             callback: showInfo,
+                             simpleSheet: true } )
+          }
+
+          function showInfo(data) {
+            document.getElementById("curAns").innerHTML = data[0].level;
+            if (data[0].level == "Yes") {
+               document.getElementById("toChange").src = "http://i2.pinger.pl/pgr398/047e3008001208e35006793d/pusheen21.png";
+            }
+            else {
+               document.getElementById("toChange").src = "https://pbs.twimg.com/profile_images/453756455057780736/tpO5K7FM.png";
+            }
+          }
+        </script>
 
 <!--
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>

@@ -88,7 +88,7 @@
             id: 'kaysabelle.k7cl84io'
           });
 
-          var map4 = L.map('map4').addLayer(tiles);
+          var map4 = L.map('map4', { zoom: 13, layers: [tiles]});
           
           var markers = L.markerClusterGroup();
           
